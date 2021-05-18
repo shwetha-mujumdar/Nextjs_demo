@@ -2,6 +2,8 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import { getFeaturedEvents } from "../dummy-data";
 import EventList from "../components/events/event-list";
+import Link from "next/link";
+
 
 export default function Home() {
   const featuredEvents = getFeaturedEvents();
@@ -21,7 +23,17 @@ export default function Home() {
           Get started by editing{" "}
           <code className={styles.code}>pages/index.js</code>
         </p>
-
+        <div>
+          <h1>The home page details</h1>
+          <ul>
+            <li>
+              <Link href="/portfolio">Portfolio</Link>
+            </li>
+            <li>
+              <Link href="/clients">Clients</Link>
+            </li>
+          </ul>
+        </div>
         <div className={styles.grid}>
           <a href="https://nextjs.org/docs" className={styles.card}>
             <h3>Documentation &rarr;</h3>
@@ -55,7 +67,6 @@ export default function Home() {
           </div>
         </div>
       </main>
-
       <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
