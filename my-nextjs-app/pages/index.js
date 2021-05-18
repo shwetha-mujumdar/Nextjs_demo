@@ -1,8 +1,13 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
+import { getFeaturedEvents } from "../dummy-data";
+import EventList from "../components/events/event-list";
 import Link from "next/link";
 
+
 export default function Home() {
+  const featuredEvents = getFeaturedEvents();
+  console.log(featuredEvents);
   return (
     <div className={styles.container}>
       <Head>
@@ -57,6 +62,9 @@ export default function Home() {
               Instantly deploy your Next.js site to a public URL with Vercel.
             </p>
           </a>
+          <div styles="display:flex">
+            <EventList items={featuredEvents} />
+          </div>
         </div>
       </main>
       <footer className={styles.footer}>
